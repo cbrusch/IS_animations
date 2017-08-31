@@ -27,7 +27,6 @@ html {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
   width: 4px; }
 
 .slider .handle:after {
@@ -55,3 +54,9 @@ html {
   width: 3rem;
   line-height: 3.125rem;
   margin: -1.5rem 0 0 -1.5rem; }
+
+.slider .handle .handle__right {
+  left: 50%; }
+
+.slider .handle .handle__left {
+  left: 10%; }
