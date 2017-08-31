@@ -10,22 +10,15 @@
 			// Check if it's a mouse or touch even and pass along the correct value
 			var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
 
-			// Get the initial position
+			// Get the initial position for the base image container
 			var dragWidth = dragElement.outerWidth(),
 				posX = dragElement.offset().left + dragWidth - startX,
 				containerOffset = container.offset().left,
 				containerWidth = container.outerWidth();
-				console.log(containerOffset);
-				console.log(containerWidth);
 
+			// Set limits for left handle
 			minLeft = containerOffset + 10;
 			maxLeft = containerOffset + containerWidth - dragWidth - 10;
-			// // Set limits for left handle
-			// minLeftHandleLeft = containerOffset + 10;
-			// maxLeftHandleLeft = containerOffset + containerWidth - dragWidth - 10;
-			// // Set limits for right handle
-			// minLeftHandleRight = containerOffset + 10;
-			// maxLeftHandleRight = containerOffset + containerWidth - dragWidth - 10;
 
 			// Calculate the dragging distance on mousemove or touchmove events
 			dragElement.parents().on('mousemove.my-events touchmove.my-events', function(e) {
