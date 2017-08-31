@@ -20,6 +20,14 @@ html {
   top: 0;
   left: 0; }
 
+.slider .resize .image-wrapper {
+  margin-left: 0;
+  overflow: hidden;
+  position: relative; }
+  .slider .resize .image-wrapper img {
+    margin-left: 0;
+    position: relative; }
+
 .slider .handle {
   background: rgba(0, 0, 0, 0.5);
   cursor: ew-resize;
@@ -55,8 +63,10 @@ html {
   line-height: 3.125rem;
   margin: -1.5rem 0 0 -1.5rem; }
 
-.slider .handle .handle__right {
+.slider .handle.handle__right {
+  position: absolute;
   left: 50%; }
 
-.slider .handle .handle__left {
+.slider .handle.handle__left {
+  position: absolute;
   left: 10%; }

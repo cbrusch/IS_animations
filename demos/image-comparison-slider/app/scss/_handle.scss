@@ -32,9 +32,11 @@
 	margin: -1.5rem 0 0 -1.5rem;
 
 }
-.slider .handle .handle__right {
+.slider .handle.handle__right {
+	position: absolute;
 	left: 50%;
 }
-.slider .handle .handle__left {
+.slider .handle.handle__left {
+	position: absolute;
 	left: 10%;
 }
