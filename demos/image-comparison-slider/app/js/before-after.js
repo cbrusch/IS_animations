@@ -25,9 +25,9 @@
 
 				// Check if it's a mouse or touch event and pass along the correct value
 				var moveX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
-					
+				console.log(moveX);
 				leftValue = moveX + posX - dragWidth;
-
+				console.log(leftValue);
 				// Prevent going out of bounds
 				if( leftValue < minLeft ) {
 					leftValue = minLeft;
