@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Blank Project</title>
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body>
+		<div class="magnify">
+			<div class="mn-1757"></div>
+			<img class="mn-1791" src="/img/mn1791.jpg" width="80%" />
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var native_width = 0;
+				var native_height = 0;
+				$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
+
+				$('.magnify').mousemove(function(e) {
+					if(!native_width && !native_height) {
+						var image_object = new Image();
+						image_object.src = $(".mn-1791").attr("src");
+
+						native_width = image_object.width*2;
+						native_height = image_object.height*2;
+					}
+					else {
+						var magnify_offset = $(this).offset();
+						var mx = e.pageX - magnify_offset.left;
+						var my = e.pageY - magnify_offset.top;
+
+						if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+							$('.mn-1757').fadeIn(100);
+						}
+						else {
+							$('.mn-1757').fadeOut(100);
+						}
+
+						if($('.mn-1757').is(":visible")) {
+							var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 650)*-1;
+							var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 80)*-1;
+							var bgp = rx + "px " + ry + "px";
+
+							var px = mx - $('.mn-1757').width()/2;
+							var py = my - $('.mn-1757').height()/2;
+
+							$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+						}
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Image Slider Comparison Demo</title>
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body>
+	<!-- https://github.com/jotform/before-after.js -->
+		<div class="slider">
+			<img src="img/mn1791layer.jpg" alt="" />
+			<div class="resize">
+				<div class="image-wrapper">
+					<img src="img/mn1757layer.jpg" alt="" />
+				</div>
+			</div>
+			<span class="handle handle__left"></span>
+			<span class="handle handle__right"></span>
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		  		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+		  		crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/before-after.js"></script>
+		<script>
+			$('.slider').beforeAfter();
+		</script>
+	</body>
+</html>

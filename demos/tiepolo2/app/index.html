@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width">
+  	<link rel="stylesheet" href="css/app.css">
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+    	<div class="painting-wrapper">
+	    	<div class="painting top">
+	    		<img src="img/mn_old_edit.png" />
+	    	</div>
+	    	<div class="painting bottom">
+	    		<img src="img/tiepolo_1757_edit.png" />
+	    	</div>
+	    </div>
+	    <div class="opacity-tools">
+	    	<div class="btn"><p>100%</p></div>
+	    	<div class="btn"><p>75%</p></div>
+	    	<div class="btn"><p>50%</p></div>
+	    	<div class="btn"><p>25%</p></div>
+	    	<div class="btn is-active"><p>0%</p></div>
+	    	<div class="btn"><p>25%</p></div>
+	    	<div class="btn"><p>50%</p></div>
+	    	<div class="btn"><p>75%</p></div>
+	    	<div class="btn"><p>100%</p></div>
+	    </div>
+    </div>
+
+    <script>
+    	$(function() {
+    		var bottom = '.bottom';
+    		var top = '.top';
+    		var top100 = '.btn:nth-child(1)';
+    		var top75 = '.btn:nth-child(2)';
+    		var top50 = '.btn:nth-child(3)';
+    		var top25 = '.btn:nth-child(4)';
+    		var nothing = '.btn:nth-child(5)';
+    		var bottom25 = '.btn:nth-child(6)';
+    		var bottom50 = '.btn:nth-child(7)';
+    		var bottom75 = '.btn:nth-child(8)';
+    		var bottom100 = '.btn:nth-child(9)';
+    		
+    		onLoad();
+
+    		$(top100).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(top).addClass('is-top');
+    			$(top).addClass('is-100');
+    			$(bottom).addClass('is-bottom');
+    			$(bottom).addClass('is-0');
+    		});
+    		$(top75).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(top).addClass('is-top');
+    			$(top).addClass('is-75');
+    			$(bottom).addClass('is-bottom');
+    			$(bottom).addClass('is-100');
+    		});
+    		$(top50).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(top).addClass('is-top');
+    			$(top).addClass('is-50');
+    			$(bottom).addClass('is-bottom');
+    			$(bottom).addClass('is-100');
+    		});
+    		$(top25).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(top).addClass('is-top');
+    			$(top).addClass('is-25');
+    			$(bottom).addClass('is-bottom');
+    			$(bottom).addClass('is-100');
+    		});
+    		$(nothing).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-75');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-50');
+    		});
+    		$(bottom25).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-25');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-100');
+    		});
+    		$(bottom50).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-50');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-100');
+    		});
+    		$(bottom75).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-75');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-100');
+    		});
+    		$(bottom100).click(function() {
+    			clear();
+    			$(this).addClass('is-active');
+    			$(this).siblings().removeClass('is-active');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-100');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-0');
+    		});
+
+    		function onLoad() {
+    			clear();
+    			$(nothing).addClass('is-active');
+    			$(nothing).siblings().removeClass('is-active');
+    			$(top).addClass('is-bottom');
+    			$(top).addClass('is-75');
+    			$(bottom).addClass('is-top');
+    			$(bottom).addClass('is-75');
+    		}
+
+    		function clear() {
+    			$('.painting-wrapper').children().removeClass('is-100');
+    			$('.painting-wrapper').children().removeClass('is-75');
+    			$('.painting-wrapper').children().removeClass('is-50');
+    			$('.painting-wrapper').children().removeClass('is-25');
+    			$('.painting-wrapper').children().removeClass('is-0');
+    			$('.painting-wrapper').children().removeClass('is-top');
+    			$('.painting-wrapper').children().removeClass('is-bottom');
+    		}
+    	})
+    </script>
+  </body>
+</html>

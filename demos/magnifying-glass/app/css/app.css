@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px; }
+
+.magnify {
+  width: 100%;
+  margin: 3rem auto;
+  position: relative;
+  cursor: none;
+  border: 2px solid red; }
+
+.mn-1757 {
+  border-radius: 100%;
+  display: none;
+  height: 12rem;
+  width: 12rem;
+  margin: 0 auto;
+  position: absolute; }
+
+.mn-1791 {
+  display: block;
+  border: 2px solid green;
+  margin: 0 auto; }

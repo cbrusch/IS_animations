@@ -1,0 +1,27 @@
+.slider {
+	overflow: hidden;
+	position: relative;
+}
+.slider img {
+	display: block;
+	width: 100%;
+	max-width: none;
+}
+.slider .resize {
+	height: 100%;
+	width: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.slider .resize .image-wrapper {
+	margin-left: 0;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		margin-left: 0;
+		position: relative;
+	}
+}
