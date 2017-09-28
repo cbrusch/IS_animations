@@ -8,24 +8,58 @@ body {
 
 .magnify {
 	width: 100%;
-	margin: 3rem auto;
+	margin: 0 auto;
 	position: relative;
 	cursor: none;
-	border: 2px solid red;
+/*	border: 2px solid red;*/
 }
 
 .mn-1757 {
 	border-radius: 100%;
 	display: none;
-	height: 12rem;
-	width: 12rem;
+	height: 10rem;
+	width: 10rem;
 	margin: 0 auto;
 	position: absolute;
+
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
 
 }
 
 .mn-1791 {
 	display: block;
-	border: 2px solid green;
+/*	border: 2px solid green;*/
 	margin: 0 auto;
+}
+
+.thumbnails {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	margin-top: 2rem;
+}
+.thumbnail {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.thumbnail a {
+	margin-top: .5rem;
+}
+
+
+img.thumbnail__1757 {
+	margin: 0 .5rem;
+	width: 150px;
+}
+img.thumbnail__1765a {
+	margin: 0 .5rem;
+	width: 200px;
+}
+
+.is-active {
+	border: 5px solid purple;
 }

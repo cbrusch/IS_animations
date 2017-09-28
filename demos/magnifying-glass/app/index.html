@@ -9,7 +9,11 @@
 	<body>
 		<div class="magnify">
 			<div class="mn-1757"></div>
-			<img class="mn-1791" src="/img/mn1791.jpg" width="80%" />
+			<img class="mn-1791" src="/img/mn1791WithText.png" width="80%" />
+		</div>
+		<div class="thumbnails">
+			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><a class="full-size__1757" href="#">Full Size</a></div>
+			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><a class="full-size__1765a" href="#">Full Size</a></div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -17,40 +21,136 @@
 			$(function() {
 				var native_width = 0;
 				var native_height = 0;
-				$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
+				var thumbnail1757 = $('.thumbnail__1757');
+				var thumbnail1765a = $('.thumbnail__1765a');
+				var fullsize1757 = $('.full-size__1757');
+				var fullsize1765a = $('.full-size__1765a');
 
-				$('.magnify').mousemove(function(e) {
-					if(!native_width && !native_height) {
-						var image_object = new Image();
-						image_object.src = $(".mn-1791").attr("src");
+				onLoad();
 
-						native_width = image_object.width*2;
-						native_height = image_object.height*2;
-					}
-					else {
-						var magnify_offset = $(this).offset();
-						var mx = e.pageX - magnify_offset.left;
-						var my = e.pageY - magnify_offset.top;
+				$(thumbnail1757).click(function() {
+					$(thumbnail1765a).removeClass('is-active');
+					$(thumbnail1757).addClass('is-active');
+					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
 
-						if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
-							$('.mn-1757').fadeIn(100);
+					$('.magnify').mousemove(function(e) {
+						if(!native_width && !native_height) {
+							var image_object = new Image();
+							image_object.src = $(".mn-1791").attr("src");
+
+							native_width = image_object.width*1;
+							native_height = image_object.height*1;
 						}
 						else {
-							$('.mn-1757').fadeOut(100);
+							var magnify_offset = $(this).offset();
+							var mx = e.pageX - magnify_offset.left;
+							var my = e.pageY - magnify_offset.top;
+
+							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+								$('.mn-1757').fadeIn(100);
+							}
+							else {
+								$('.mn-1757').fadeOut(100);
+							}
+
+							if($('.mn-1757').is(":visible")) {
+								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 230)*-1;
+								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
+								var bgp = rx + "px " + ry + "px";
+
+								var px = mx - $('.mn-1757').width()/2;
+								var py = my - $('.mn-1757').height()/2;
+
+								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+							}
 						}
+					})
+				});
 
-						if($('.mn-1757').is(":visible")) {
-							var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 650)*-1;
-							var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 80)*-1;
-							var bgp = rx + "px " + ry + "px";
+				$(thumbnail1765a).click(function() {
+					$(thumbnail1757).removeClass('is-active');
+					$(thumbnail1765a).addClass('is-active');
+					$('.mn-1757').css("background", "url(/img/mn1765LayerA_black.png) no-repeat");
 
-							var px = mx - $('.mn-1757').width()/2;
-							var py = my - $('.mn-1757').height()/2;
+					$('.magnify').mousemove(function(e) {
+						if(!native_width && !native_height) {
+							var image_object = new Image();
+							image_object.src = $(".mn-1791").attr("src");
 
-							$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+							native_width = image_object.width*.5;
+							native_height = image_object.height*.5;
 						}
-					}
-				})
+						else {
+							var magnify_offset = $(this).offset();
+							var mx = e.pageX - magnify_offset.left;
+							var my = e.pageY - magnify_offset.top;
+
+							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+								$('.mn-1757').fadeIn(100);
+							}
+							else {
+								$('.mn-1757').fadeOut(100);
+							}
+
+							if($('.mn-1757').is(":visible")) {
+								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 240)*-1;
+								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
+								var bgp = rx + "px " + ry + "px";
+
+								var px = mx - $('.mn-1757').width()/2;
+								var py = my - $('.mn-1757').height()/2;
+
+								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+							}
+						}
+					})
+				});
+
+				// $(fullsize1757).click(function() {
+				// 	$(thumbnail1757).removeClass('is-active');
+				// 	$(thumbnail1765a).removeClass('is-active');
+
+				// 	$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
+
+				// });
+
+				function onLoad() {
+					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
+
+					$('.magnify').mousemove(function(e) {
+						if(!native_width && !native_height) {
+							var image_object = new Image();
+							image_object.src = $(".mn-1791").attr("src");
+
+							native_width = image_object.width*1;
+							native_height = image_object.height*1;
+						}
+						else {
+							var magnify_offset = $(this).offset();
+							var mx = e.pageX - magnify_offset.left;
+							var my = e.pageY - magnify_offset.top;
+
+							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+								$('.mn-1757').fadeIn(100);
+							}
+							else {
+								$('.mn-1757').fadeOut(100);
+							}
+
+							if($('.mn-1757').is(":visible")) {
+								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 230)*-1;
+								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
+								var bgp = rx + "px " + ry + "px";
+
+								var px = mx - $('.mn-1757').width()/2;
+								var py = my - $('.mn-1757').height()/2;
+
+								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+							}
+						}
+					})
+				}
+				
 			});
 		</script>
 	</body>
