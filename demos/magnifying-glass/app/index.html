@@ -8,7 +8,7 @@
 	</head>
 	<body>
 	<!-- a modification of https://codepen.io/AGvin/pen/mqKsC -->
-		<div class="magnify">
+		<div class="wrapper">
 			<div class="mn-1757"></div>
 			<img class="mn-1791" src="/img/mn1791WithText.png" width="80%" />
 		</div>
@@ -27,26 +27,47 @@
 				var fullsize1757 = $('.full-size__1757');
 				var fullsize1765a = $('.full-size__1765a');
 
-				onLoad();
+				show1757();
 
 				$(thumbnail1757).click(function() {
+					show1757();
+				});
+
+				$(thumbnail1765a).click(function() {
+					show1765a();
+				});
+
+				// $(fullsize1757).click(function() {
+				// 	$(thumbnail1757).removeClass('is-active');
+				// 	$(thumbnail1765a).removeClass('is-active');
+
+				// 	$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
+
+				// });
+
+				function show1757() {
 					$(thumbnail1765a).removeClass('is-active');
 					$(thumbnail1757).addClass('is-active');
-					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
+					// $('.mn-1757').css({"background": "url(/img/mn1757Layer_black.png) no-repeat", "background-size": "1600px 900px", "border": "10px solid red"});
 
-					$('.magnify').mousemove(function(e) {
-						if(!native_width && !native_height) {
+					// map magnifying glass to mouse position
+					$('.wrapper').mousemove(function(e) {
+						if(!native_width && !native_height) { //calculate the width and height of the main image (1791) on load
 							var image_object = new Image();
 							image_object.src = $(".mn-1791").attr("src");
 
 							native_width = image_object.width*1;
 							native_height = image_object.height*1;
+							console.log(native_width);
+							console.log(native_height);
 						}
 						else {
+							console.log("I am doing this");
 							var magnify_offset = $(this).offset();
 							var mx = e.pageX - magnify_offset.left;
 							var my = e.pageY - magnify_offset.top;
 
+							// make magnifying glass disappear when it reaches the edges of the portal painting
 							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
 								$('.mn-1757').fadeIn(100);
 							}
@@ -66,14 +87,14 @@
 							}
 						}
 					})
-				});
+				}
 
-				$(thumbnail1765a).click(function() {
+				function show1765a() {
 					$(thumbnail1757).removeClass('is-active');
 					$(thumbnail1765a).addClass('is-active');
 					$('.mn-1757').css("background", "url(/img/mn1765LayerA_black.png) no-repeat");
 
-					$('.magnify').mousemove(function(e) {
+					$('.wrapper').mousemove(function(e) {
 						if(!native_width && !native_height) {
 							var image_object = new Image();
 							image_object.src = $(".mn-1791").attr("src");
@@ -95,51 +116,6 @@
 
 							if($('.mn-1757').is(":visible")) {
 								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 240)*-1;
-								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
-								var bgp = rx + "px " + ry + "px";
-
-								var px = mx - $('.mn-1757').width()/2;
-								var py = my - $('.mn-1757').height()/2;
-
-								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
-							}
-						}
-					})
-				});
-
-				// $(fullsize1757).click(function() {
-				// 	$(thumbnail1757).removeClass('is-active');
-				// 	$(thumbnail1765a).removeClass('is-active');
-
-				// 	$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
-
-				// });
-
-				function onLoad() {
-					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
-
-					$('.magnify').mousemove(function(e) {
-						if(!native_width && !native_height) {
-							var image_object = new Image();
-							image_object.src = $(".mn-1791").attr("src");
-
-							native_width = image_object.width*1;
-							native_height = image_object.height*1;
-						}
-						else {
-							var magnify_offset = $(this).offset();
-							var mx = e.pageX - magnify_offset.left;
-							var my = e.pageY - magnify_offset.top;
-
-							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
-								$('.mn-1757').fadeIn(100);
-							}
-							else {
-								$('.mn-1757').fadeOut(100);
-							}
-
-							if($('.mn-1757').is(":visible")) {
-								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 230)*-1;
 								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
 								var bgp = rx + "px " + ry + "px";
 
