@@ -48,27 +48,23 @@
 				function show1757() {
 					$(thumbnail1765a).removeClass('is-active');
 					$(thumbnail1757).addClass('is-active');
-					// $('.mn-1757').css({"background": "url(/img/mn1757Layer_black.png) no-repeat", "background-size": "1600px 900px", "border": "10px solid red"});
+					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
 
-					// map magnifying glass to mouse position
-					$('.wrapper').mousemove(function(e) {
+					$('.wrapper').mousemove(function(e) { // map magnifying glass to main image dimensions once
 						if(!native_width && !native_height) { //calculate the width and height of the main image (1791) on load
-							var image_object = new Image();
-							image_object.src = $(".mn-1791").attr("src");
-
-							native_width = image_object.width*1;
+							var image_object = new Image(); //construct a new Image element
+							image_object.src = $(".mn-1791").attr("src"); //give it the same img source as the mn-1791 element
+							native_width = image_object.width*1; // give it the same width and height as the source image
 							native_height = image_object.height*1;
-							console.log(native_width);
-							console.log(native_height);
 						}
-						else {
-							console.log("I am doing this");
-							var magnify_offset = $(this).offset();
-							var mx = e.pageX - magnify_offset.left;
-							var my = e.pageY - magnify_offset.top;
+						else { // map magnifying glass to mouse position continuously
+							var magnify_offset = $(this).offset(); // current position coordinates of wrapper (seems to always be 0 0)
+							console.log(e.pageX);
+							var mouseX = e.pageX - magnify_offset.left; // mouse x-coord - wrapper x-coord (x-0)
+							var mouseY = e.pageY - magnify_offset.top; // mouse y-coord - wrapper y-cord (y-0)
 
 							// make magnifying glass disappear when it reaches the edges of the portal painting
-							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+							if(mouseX < $(this).width() && mouseY < $(this).height() && mouseX > 0 && mouseY > 0) {
 								$('.mn-1757').fadeIn(100);
 							}
 							else {
@@ -76,12 +72,12 @@
 							}
 
 							if($('.mn-1757').is(":visible")) {
-								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 230)*-1;
-								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
+								var rx = ((Math.round(mouseX/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 230)*-1;
+								var ry = ((Math.round(mouseY/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
 								var bgp = rx + "px " + ry + "px";
 
-								var px = mx - $('.mn-1757').width()/2;
-								var py = my - $('.mn-1757').height()/2;
+								var px = mouseX - $('.mn-1757').width()/2;
+								var py = mouseY - $('.mn-1757').height()/2;
 
 								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
 							}
@@ -104,10 +100,10 @@
 						}
 						else {
 							var magnify_offset = $(this).offset();
-							var mx = e.pageX - magnify_offset.left;
-							var my = e.pageY - magnify_offset.top;
+							var mouseX = e.pageX - magnify_offset.left;
+							var mouseY = e.pageY - magnify_offset.top;
 
-							if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+							if(mouseX < $(this).width() && mouseY < $(this).height() && mouseX > 0 && mouseY > 0) {
 								$('.mn-1757').fadeIn(100);
 							}
 							else {
@@ -115,12 +111,12 @@
 							}
 
 							if($('.mn-1757').is(":visible")) {
-								var rx = ((Math.round(mx/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 240)*-1;
-								var ry = ((Math.round(my/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
+								var rx = ((Math.round(mouseX/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 240)*-1;
+								var ry = ((Math.round(mouseY/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
 								var bgp = rx + "px " + ry + "px";
 
-								var px = mx - $('.mn-1757').width()/2;
-								var py = my - $('.mn-1757').height()/2;
+								var px = mouseX - $('.mn-1757').width()/2;
+								var py = mouseY - $('.mn-1757').height()/2;
 
 								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
 							}
