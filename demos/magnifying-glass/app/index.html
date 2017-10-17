@@ -78,16 +78,21 @@
 								//the width of the portal window must also be responsive
 								// var mytest = $('.mn-1757').width();
 								// console.log(mytest);
-								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) - ($('.mn-1757').height()-600)) * -1;
+								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) - 220) * -1;
 								var bgp = rx + "px " + ry + "px";
+								var testx = -mouseX;
+								var mytest = testx + "px " + ry + "px";
+								console.log(mytest);
 
 								var px = mouseX - $('.mn-1757').width()/2;
 								var py = mouseY - $('.mn-1757').height()/2;
-								console.log(px);
-								console.log(py);
-								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
-								// $('.mn-1757').css({left: px, top: py});
-								// $('.mn-1757 img').css({left: px, top: py});
+								ry = ry/2;
+								// console.log(rx + ', ' + ry);
+								// console.log(px + ', ' + py);
+								// console.log(bgp);
+								// $('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+								$('.mn-1757').css({left: px, top: py, backgroundPosition: mytest});
+
 							}
 						}
 					})
