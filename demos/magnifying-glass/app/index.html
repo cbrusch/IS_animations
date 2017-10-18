@@ -78,9 +78,9 @@
 								//the width of the portal window must also be responsive
 								// var mytest = $('.mn-1757').width();
 								// console.log(mytest);
-								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) - 220) * -1;
+								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) + 50) * -1;
 								var bgp = rx + "px " + ry + "px";
-								var testx = -mouseX;
+								var testx = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
 								var mytest = testx + "px " + ry + "px";
 								console.log(mytest);
 
