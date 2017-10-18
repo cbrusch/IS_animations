@@ -13,8 +13,10 @@
 			<img class="mn-1791" src="/img/mn1791WithText.png" width="80%" />
 		</div>
 		<div class="thumbnails">
-			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><a class="full-size__1757" href="#">Full Size</a></div>
-			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><a class="full-size__1765a" href="#">Full Size</a></div>
+<!-- 			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><a class="full-size__1757" href="#">Full Size</a></div>
+			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><a class="full-size__1765a" href="#">Full Size</a></div> -->
+			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><p>1757</p></div>
+			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><p>1765</p></div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -74,29 +76,12 @@
 							}
 
 							if($('.mn-1757').is(":visible")) {
-								var rx = ((Math.round(mouseX/$('.mn-1791').width()*native_width - $('.mn-1757').width()/2)) - 80) * -1; /* mouseX/width of responsive 1791 div * width of original 1791 image - width of non-responsive 1757 div / 2 - ??? * -1??? */
-								//the width of the portal window must also be responsive
-								// var mytest = $('.mn-1757').width();
-								// console.log(mytest);
-								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) + 50) * -1;
-								var bgp = rx + "px " + ry + "px";
-								var testX = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
-								console.log(mouseY);
-								// console.log(ry);
-								// var testy = ry + 220;
-								var testY = 0;
-								var mytest = testX + "px " + testY + "px";
-								console.log(mytest);
-
-								var px = mouseX - $('.mn-1757').width()/2;
-								// var py = mouseY - $('.mn-1757').height()/2;
-								var py = 0;
-								// ry = ry/2;
-								// console.log(rx + ', ' + ry);
-								// console.log(px + ', ' + py);
-								// console.log(bgp);
-								// $('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
-								$('.mn-1757').css({left: px, top: py, backgroundPosition: mytest});
+								var bkgPosX = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
+								var bkgPosY = 0;
+								var bkgPos = bkgPosX + "px " + bkgPosY + "px";
+								var portalPosX = mouseX - $('.mn-1757').width()/2;
+								var portalPosY = 0;
+								$('.mn-1757').css({left: portalPosX, top: portalPosY, backgroundPosition: bkgPos});
 
 							}
 						}
@@ -107,6 +92,7 @@
 					$(thumbnail1757).removeClass('is-active');
 					$(thumbnail1765a).addClass('is-active');
 					$('.mn-1757').css("background", "url(/img/mn1765LayerA_black.png) no-repeat");
+					$('.mn-1757').css("background-size", "100vw, 100%");
 
 					$('.wrapper').mousemove(function(e) {
 						if(!native_width && !native_height) {
@@ -129,19 +115,16 @@
 							}
 
 							if($('.mn-1757').is(":visible")) {
-								var rx = ((Math.round(mouseX/$(".mn-1791").width()*native_width - $('.mn-1757').width()/2)) - 240)*-1;
-								var ry = ((Math.round(mouseY/$(".mn-1791").height()*native_height - $('.mn-1757').height()/2)) - 0)*-1;
-								var bgp = rx + "px " + ry + "px";
-
-								var px = mouseX - $('.mn-1757').width()/2;
-								var py = mouseY - $('.mn-1757').height()/2;
-
-								$('.mn-1757').css({left: px, top: py, backgroundPosition: bgp});
+								var bkgPosX = -mouseX + ($('.mn-1791').width() * .1); // move 1765 painting about 10% to the right to line up with key figures in 1791
+								var bkgPosY = 0;
+								var bkgPos = bkgPosX + "px " + bkgPosY + "px";
+								var portalPosX = mouseX - $('.mn-1757').width()/2;
+								var portalPosY = 0;
+								$('.mn-1757').css({left: portalPosX, top: portalPosY, backgroundPosition: bkgPos});
 							}
 						}
 					})
-				}
-				
+				}	
 			});
 		</script>
 	</body>
