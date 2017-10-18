@@ -80,13 +80,18 @@
 								// console.log(mytest);
 								var ry = ((Math.round(mouseY/$('.mn-1791').height()*native_height - $('.mn-1757').height()/2)) + 50) * -1;
 								var bgp = rx + "px " + ry + "px";
-								var testx = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
-								var mytest = testx + "px " + ry + "px";
+								var testX = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
+								console.log(mouseY);
+								// console.log(ry);
+								// var testy = ry + 220;
+								var testY = 0;
+								var mytest = testX + "px " + testY + "px";
 								console.log(mytest);
 
 								var px = mouseX - $('.mn-1757').width()/2;
-								var py = mouseY - $('.mn-1757').height()/2;
-								ry = ry/2;
+								// var py = mouseY - $('.mn-1757').height()/2;
+								var py = 0;
+								// ry = ry/2;
 								// console.log(rx + ', ' + ry);
 								// console.log(px + ', ' + py);
 								// console.log(bgp);
