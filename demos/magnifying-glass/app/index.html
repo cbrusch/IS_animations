@@ -3,18 +3,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<title>Blank Project</title>
+		<title>Tiepolo Portal</title>
 		<link rel="stylesheet" href="css/app.css">
 	</head>
 	<body>
 	<!-- a modification of https://codepen.io/AGvin/pen/mqKsC -->
 		<div class="wrapper">
 			<div class="mn-1757"></div>
-			<img class="mn-1791" src="/img/mn1791WithText.png" width="80%" />
+			<img class="mn-1791" src="img/mn1791WithText.png" width="80%" />
 		</div>
 		<div class="thumbnails">
-<!-- 			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><a class="full-size__1757" href="#">Full Size</a></div>
-			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><a class="full-size__1765a" href="#">Full Size</a></div> -->
 			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><p>1757</p></div>
 			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><p>1765</p></div>
 		</div>
@@ -39,18 +37,10 @@
 					show1765a();
 				});
 
-				// $(fullsize1757).click(function() {
-				// 	$(thumbnail1757).removeClass('is-active');
-				// 	$(thumbnail1765a).removeClass('is-active');
-
-				// 	$('.mn-1757').css("background", "url(/img/mn1757.jpg) no-repeat");
-
-				// });
-
 				function show1757() {
 					$(thumbnail1765a).removeClass('is-active');
 					$(thumbnail1757).addClass('is-active');
-					$('.mn-1757').css("background", "url(/img/mn1757Layer_black.png) no-repeat");
+					$('.mn-1757').css("background", "url(img/mn1757Layer_black.png) no-repeat");
 					$('.mn-1757').css("background-size", "100vw, 100%");
 
 					$('.wrapper').mousemove(function(e) { // map magnifying glass to main image dimensions once
@@ -91,7 +81,7 @@
 				function show1765a() {
 					$(thumbnail1757).removeClass('is-active');
 					$(thumbnail1765a).addClass('is-active');
-					$('.mn-1757').css("background", "url(/img/mn1765LayerA_black.png) no-repeat");
+					$('.mn-1757').css("background", "url(img/mn1765LayerA_black.png) no-repeat");
 					$('.mn-1757').css("background-size", "100vw, 100%");
 
 					$('.wrapper').mousemove(function(e) {
