@@ -6,7 +6,6 @@ body {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	min-height: 200vh;
 }
 p {
 	margin: 0;
@@ -23,14 +22,15 @@ p {
 .graphic__wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 
 	.sticky-wrapper {
 		grid-area: 1 / 1 / auto / span 4;
 	}
 	h4 {
-		margin-top: 2rem;
 		line-height: 3rem;
+		text-align: left;
+		margin-top: 2rem;
 	}
 }
 #my-offset-debug {
@@ -56,15 +56,15 @@ p {
 	position: relative;
 }
 #basic-waypoint {
-	top: 0;
-	display: grid;
-	grid-area: 2 / 2 / 2 / 3;
+	top: 50vh;
+/*	display: grid;*/
+/*	grid-area: 2 / 2 / 2 / 3;*/
 }
 #basic-waypoint-2 {
-	top: 201vh;
+	top: 200vh;
 }
 #basic-waypoint-3 {
-	top: 301vh;
+	top: 350vh;
 }
 .basic-sticky-waypoint {
 	height: auto;
@@ -89,21 +89,21 @@ p {
 }
 .my-image__animation--1 {
 	filter: grayscale(0);
-	transform: translate3d(30%, 40%, 0) scale3d(2, 2, 2);
+	transform: translate3d(-76%, -38%, 0) scale3d(2.6, 2.6, 2.6);
 	transition-property: filter, transform;
 	transition-delay: .4s;
 	transition-duration: 1s;
 	transition-timing-function: ease;
 }
 .my-image__animation--2 {
-	transform: translate3d(-45%, 55%, 0) scale3d(2.6, 2.6, 2.6);
+	transform: translate3d(-22%, -20%, 0) scale3d(1.6, 1.6, 1.6);
 	transition-property: transform;
 	transition-delay: .2s;
 	transition-duration: 1s;
 	transition-timing-function: ease;
 }
 .my-image__animation--3 {
-	transform: translate3d(-5%, 15%, 0) scale3d(1.5, 1.5, 1.5);
+	transform: translate3d(-48%, -30%, 0) scale3d(2, 2, 2);
 	transition-property: transform;
 	transition-delay: .2s;
 	transition-duration: 1s;
@@ -116,15 +116,6 @@ p {
 	transition-duration: 1s;
 	transition-timing-function: ease;
 }
-/*.graphic__vis {
-	background-image: url(https://source.superherostuff.com/wp-content/uploads/2017/05/0-cover-1.jpg);
-	background-size: cover;
-	background-color: hsla(343, 100, 50, 0.3);
-	min-height: 50vh;
-}
-.trigger {
-	height: 30vh;
-}
 .my-test-in {
 	background-color: hsla(360, 100, 0, .5);
 	transition-property: background-color;
@@ -136,48 +127,4 @@ p {
 	transition-property: background-color;
 	transition-duration: .3s;
 	transition-timing-function: ease;
-}*/
-
-/*#container {
-	border: 5px solid purple;
-	height: 80vh;
-	width: 100vw;
-	overflow: scroll;
-	position: relative;
-	background-image: url(https://source.superherostuff.com/wp-content/uploads/2017/05/0-cover-1.jpg);
-	background-size: cover;
 }
-.storyWrapper {
-	position: static;
-}
-.scrollStoryItem {
-	height: 100%;
-	position: relative;
-}
-.scrollStoryItem:nth-child(1) {
-	border: 5px solid orange;
-}
-.scrollStoryItem:nth-child(2) {
-	border: 5px solid pink;
-}
-#story0-0 {
-	background-color: aqua;
-}
-
-.is-fixed {
-	position: fixed !important;
-	top: 0px !important;
-}
-.is-also-fixed {
-	position: fixed !important;
-	top: calc(0px + 80vh + 10px) !important;
-}
-
-#aboveContainer {
-	height: 40vh;
-	position: relative;
-}
-#belowContainer {
-	height: 1000vh;
-	position: relative;
-}*/
