@@ -12,9 +12,13 @@
 				<img class="my-image my-image--filtered" src="img/tiepolo1765.jpg" alt="">
 			</div>
 
-			<div id="basic-waypoint" class="basic-waypoint-bkg"><h4>Here we see a young boy – or, perhaps, a dwarf – wearing a funny feathered hat. A large key hangs from his belt – does it unlock the meaning of the painting? In his hand he holds a magnifying glass.</h4></div>
-			<div id="basic-waypoint-2" class="basic-waypoint-bkg"><h4>So, too, does the man next to him; wearing a bright red robe and bautta, or tricorn hat and mask, this monumental figure peers intently through his looking glass. Is the visual emphasis on magnification that characterizes this pair an invitation for us to join their company, to look more closely?</h4></div>
-			<div id="basic-waypoint-3" class="basic-waypoint-bkg"><h4>Now we see a masked boy holding a lantern. He seems to be tugging at the man’s red robe. Does the lantern-carrying boy serve to illuminate the identity of this masked ensemble? Or does he shed light on the scene unfolding before them?</h4></div>
+			<div id="basic-waypoint" class="graphic__prose basic-waypoint-bkg"><h4>Here we see a young boy – or, perhaps, a dwarf – wearing a funny feathered hat. A large key hangs from his belt – does it unlock the meaning of the painting? In his hand he holds a magnifying glass.</h4></div>
+			<div id="basic-waypoint-2" class="graphic__prose basic-waypoint-bkg"><h4>So, too, does the man next to him; wearing a bright red robe and bautta, or tricorn hat and mask, this monumental figure peers intently through his looking glass. Is the visual emphasis on magnification that characterizes this pair an invitation for us to join their company, to look more closely?</h4></div>
+			<div id="basic-waypoint-3" class="graphic__prose basic-waypoint-bkg"><h4>Now we see a masked boy holding a lantern. He seems to be tugging at the man’s red robe. Does the lantern-carrying boy serve to illuminate the identity of this masked ensemble? Or does he shed light on the scene unfolding before them?</h4></div>
+			<div id="basic-waypoint-4" class="graphic__prose basic-waypoint-bkg">
+				<h5>Giandomenico painted other colorful sketches of Venetian life during Carnival. The Minuet, painted just three years earlier, includes a mondo nuovo, visible in the far left corner. A barker, seemingly lurking in the shadows, surveys the festive crowd. This is the first time the device appears in Giandomenico&#39;s work, albeit as a somewhat marginal reference in a Carnival scene.</h5>
+				<div><a href="https://commons.wikimedia.org/wiki/Category:Carnival_Scene_-_Giovanni_Domenico_Tiepolo_-_Louvre_RF_1938-100" target="_blank"><img src="img/tiepoloTheMinuet1754.jpg" alt=""><p class="caption"><strong>Giandomenico Tiepolo</strong>, Louvre Museum, Venice, <em>Carnival Scene (The Minuet)</em>, 1754</p></a></div>
+			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -44,7 +48,7 @@
 						}
 						
 					},
-					offset: -150, // moving the trigger location from 0 at the top of the viewport
+					offset: -190, // moving the trigger location from 0 at the top of the viewport
 				})
 				var waypoint = new Waypoint({
 					element: document.getElementById('basic-waypoint-2'),
@@ -63,7 +67,7 @@
 							$('.my-image').removeClass('my-image__animation--3');
 						}
 					},
-					offset: -150,
+					offset: -290,
 				})
 				var waypoint = new Waypoint({
 					element: document.getElementById('basic-waypoint-3'),
@@ -72,30 +76,56 @@
 						if(direction === 'down') {
 							document.getElementById('basic-waypoint-3').classList.add('my-test-in');
 							document.getElementById('basic-waypoint-3').classList.remove('my-test-out');
-							$('.my-image').addClass('my-image__animation--reset');
+							$('.my-image').addClass('my-image__animation--4');
 							$('.my-image').removeClass('my-image__animation--3');
 						}
 						else {
 							document.getElementById('basic-waypoint-3').classList.add('my-test-out');
 							document.getElementById('basic-waypoint-3').classList.remove('my-test-in');
 							$('.my-image').addClass('my-image__animation--3');
-							$('.my-image').removeClass('my-image__animation--reset');
+							$('.my-image').removeClass('my-image__animation--4');
 						}
 
 						// if($('#basic-waypoint-3').hasClass('my-test-in')) {
 						// 	sticky.destroy();
 						// }
 					},
-					offset: -150,
+					offset: -270,
+				})
+				var waypoint = new Waypoint({
+					element: document.getElementById('basic-waypoint-4'),
+					handler: function(direction) {
+						console.log('Direction: ' + direction);
+						if(direction === 'down') {
+							document.getElementById('basic-waypoint-4').classList.add('my-test-in');
+							document.getElementById('basic-waypoint-4').classList.remove('my-test-out');
+							$('.my-image').addClass('my-image__animation--end');
+							$('.my-image').removeClass('my-image__animation--4');
+						}
+						else {
+							document.getElementById('basic-waypoint-4').classList.add('my-test-out');
+							document.getElementById('basic-waypoint-4').classList.remove('my-test-in');
+							$('.my-image').addClass('my-image__animation--4');
+							$('.my-image').removeClass('my-image__animation-end');
+						}
+					},
+					offset: -230,
 				})
 
 
 				var sticky = new Waypoint.Sticky({
 					element: $('.basic-sticky-waypoint')[0],
-					handler: function() { // triggered when the top of the element hits the top of the viewport
+					handler: function(direction) { // triggered when the top of the element hits the top of the viewport
 						console.log('am I sticking?');
-						$('.my-image').addClass('my-image__animation--1');
-						$('.my-image').removeClass('my-image--filtered');
+						if(direction === 'down') {
+							$('.my-image').addClass('my-image__animation--1');
+							$('.my-image').removeClass('my-image--filtered');
+							$('.my-image').removeClass('my-image--reset');
+						}
+						else {
+							$('.my-image').addClass('my-image--reset');
+							$('.my-image').removeClass('my-image__animation--1');
+						}
 					}
 				})
 			});

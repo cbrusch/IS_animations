@@ -1,5 +1,10 @@
 html {
+  font-family: Georgia;
+  font-weight: 300;
   font-size: 16px; }
+  html a {
+    color: #000;
+    text-decoration: none; }
 
 body {
   background-color: white;
@@ -19,16 +24,17 @@ p {
   position: relative;
   top: 100px; }
 
-.graphic__wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; }
-  .graphic__wrapper .sticky-wrapper {
-    grid-area: 1 / 1 / auto / span 4; }
-  .graphic__wrapper h4 {
-    line-height: 3rem;
-    text-align: left;
-    margin-top: 2rem; }
+.graphic__wrapper h4 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: left;
+  margin-top: 2rem; }
+
+.graphic__wrapper h5 {
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: left;
+  margin-top: 2rem; }
 
 #my-offset-debug {
   background-color: red;
@@ -42,40 +48,49 @@ p {
   position: fixed;
   top: 0; }
 
+.graphic__prose {
+  width: 25%; }
+
 .basic-waypoint-bkg {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   font-size: 36px;
   font-weight: 600;
   text-align: center;
   min-height: 100px;
-  width: 100%;
+  /*	width: 100%;*/
   padding: 2rem;
   position: relative; }
 
 #basic-waypoint {
   top: 50vh;
-  /*	display: grid;*/
-  /*	grid-area: 2 / 2 / 2 / 3;*/ }
+  left: 55vw; }
 
 #basic-waypoint-2 {
-  top: 200vh; }
+  top: 150vh;
+  left: 36vw; }
 
 #basic-waypoint-3 {
-  top: 350vh; }
+  top: 250vh;
+  left: 41vw; }
+
+#basic-waypoint-4 {
+  top: 380vh;
+  left: 29vw;
+  /*	strong {
+		font-weight: 800;
+	}*/ }
+  #basic-waypoint-4 img {
+    max-width: 100%; }
+  #basic-waypoint-4 p.caption {
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: left;
+    padding-top: .5rem; }
 
 .basic-sticky-waypoint {
   height: auto;
   width: 100%;
   overflow: hidden; }
-
-.graphic__prose p:nth-child(1) {
-  background-color: rgba(255, 0, 72, 0.5); }
-
-.graphic__prose p:nth-child(2) {
-  background-color: rgba(255, 0, 72, 0.7); }
-
-.graphic__prose p:nth-child(3) {
-  background-color: rgba(255, 0, 72, 0.9); }
 
 .my-image {
   height: auto;
@@ -85,22 +100,42 @@ p {
   -webkit-filter: grayscale(85%);
   filter: grayscale(85%); }
 
-.my-image__animation--1 {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-  -webkit-transform: translate3d(-76%, -38%, 0) scale3d(2.6, 2.6, 2.6);
-  transform: translate3d(-76%, -38%, 0) scale3d(2.6, 2.6, 2.6);
+.my-image__animation--reset {
+  -webkit-filter: grayscale(85%);
+  filter: grayscale(85%);
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   -webkit-transition-property: -webkit-filter, -webkit-transform;
   transition-property: -webkit-filter, -webkit-transform;
   -o-transition-property: filter, transform;
   transition-property: filter, transform;
   transition-property: filter, transform, -webkit-filter, -webkit-transform;
-  -webkit-transition-delay: .4s;
-  -o-transition-delay: .4s;
-  transition-delay: .4s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -webkit-transition-delay: .2s;
+  -o-transition-delay: .2s;
+  transition-delay: .2s;
+  -webkit-transition-duration: 1.5s;
+  -o-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+
+.my-image__animation--1 {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  -webkit-transform: translate3d(-65%, -38%, 0) scale3d(2.6, 2.6, 2.6);
+  transform: translate3d(-65%, -38%, 0) scale3d(2.6, 2.6, 2.6);
+  -webkit-transition-property: -webkit-filter, -webkit-transform;
+  transition-property: -webkit-filter, -webkit-transform;
+  -o-transition-property: filter, transform;
+  transition-property: filter, transform;
+  transition-property: filter, transform, -webkit-filter, -webkit-transform;
+  -webkit-transition-delay: .2s;
+  -o-transition-delay: .2s;
+  transition-delay: .2s;
+  -webkit-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
   -webkit-transition-timing-function: ease;
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
@@ -141,7 +176,25 @@ p {
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
 
-.my-image__animation--reset {
+.my-image__animation--4 {
+  -webkit-transform: translate3d(-56%, 20%, 0) scale3d(3, 3, 3);
+  transform: translate3d(-56%, 20%, 0) scale3d(3, 3, 3);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-delay: .2s;
+  -o-transition-delay: .2s;
+  transition-delay: .2s;
+  -webkit-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+
+.my-image__animation--end {
   -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   -webkit-transition-property: -webkit-transform;
@@ -172,7 +225,7 @@ p {
   transition-timing-function: ease; }
 
 .my-test-out {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-transition-property: background-color;
   -o-transition-property: background-color;
   transition-property: background-color;
@@ -182,3 +235,21 @@ p {
   -webkit-transition-timing-function: ease;
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  /* phones in landscape */ }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* tablets */ }
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  /* small laptops */ }
+
+@media screen and (min-width: 1200px) and (max-width: 1379px) {
+  /* laptops */ }
+
+@media screen and (min-width: 1380px) and (max-width: 1560px) {
+  /* desktops */ }
+
+@media screen and (min-width: 1561px) and (max-width: 1700px) {
+  /* large desktops */ }
