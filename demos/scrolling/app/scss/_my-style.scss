@@ -12,19 +12,24 @@ body {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	height: 2000vh;
 }
 p {
-	margin-bottom: 2rem;
+	margin: 0;
 }
-sup, sub {
-	vertical-align: baseline;
+.article {
+	font-size: 72px;
+	font-weight: 600;
+	text-align: center;
+	height: 800px;
+	width: 100%;
 	position: relative;
-	top: -.75rem;
+	top: 100px; 	
 }
-sub {
-	top: .5rem;
-}
+.graphic__wrapper {
+
+	.sticky-wrapper {
+
+	}
 	h4 {
 		font-size: 1.5rem;
 		line-height: 2.5rem;
@@ -37,21 +42,6 @@ sub {
 		text-align: left;
 		margin-top: 2rem;
 	}
-.article {
-	font-size: 1.5rem;
-	line-height: 2.5rem;
-	text-align: left;
-	width: 100vh;
-	margin: 5rem 20rem 5rem 2rem;
-	position: relative;	
-}
-	.sticky-wrapper {
-		border: 1px solid green;
-	}
-.graphic__wrapper {
-	position: relative;
-
-
 }
 #my-offset-debug {
 	 background-color: red;
@@ -65,22 +55,6 @@ sub {
 	position: fixed;
 	top: 0;
 }
-.stuck-below-graphic {
-	position: fixed;
-}
-.unstuck {
-	position: absolute;
-	top: 0;
-}
-.graphic-prose__wrapper {
-	border: 2px solid red;
-	z-index: 50;
-	width: 100%;
-	height: auto;
-	position: absolute;
-	top: 0;
-	overflow: hidden;
-}
 .graphic__prose {
 	width: 25%;
 }
@@ -89,7 +63,7 @@ sub {
 	font-size: 36px;
 	font-weight: 600;
 	text-align: center;
-	min-height: 300px;
+	min-height: 100px;
 /*	width: 100%;*/
 	padding: 2rem;
 	position: relative;
@@ -107,7 +81,7 @@ sub {
 	left: 41vw;
 }
 #basic-waypoint-4 {
-	top: 350vh;
+	top: 380vh;
 	left: 29vw;
 	img {
 		max-width: 100%;
