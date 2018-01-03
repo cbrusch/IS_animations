@@ -12,6 +12,10 @@
 		<div class="graphic__wrapper">
 			<div class="basic-sticky-waypoint">
 				<img class="my-image my-image--filtered" src="img/tiepolo1765.jpg" alt="">
+				<div class="figure-highlight figure-highlight--1"></div>
+				<div class="figure-highlight figure-highlight--2"></div>
+				<div class="figure-highlight figure-highlight--3"></div>
+				<div class="figure-highlight figure-highlight--4"></div>
 			</div>
 			<div class="minimap__wrapper">
 			<div class="minimap__container">
@@ -115,14 +119,21 @@
 					$('.my-image').addClass('my-image__animation--1');
 					$('.my-image').removeClass('my-image--filtered');
 					$('.my-image').removeClass('my-image--reset');
+					window.setTimeout(function(){
+						$('.figure-highlight--1').addClass('is-visible');
+					}, 800);
+					$('.figure-highlight--1').removeClass('is-hidden');
 					$('.minimap__container').addClass('my-minimap--visible');
 					$('.minimap__container').removeClass('my-minimap--hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--reset');
+
 				}
 				function reverseAnimation1() {
 					$('.my-image').addClass('my-image--reset');
 					$('.my-image').removeClass('my-image__animation--1');
+					$('.figure-highlight--1').addClass('is-hidden');
+					$('.figure-highlight--1').removeClass('is-visible');
 					$('.minimap__container').addClass('my-minimap--hidden');
 					$('.minimap__container').removeClass('my-minimap--visible');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--1');
@@ -133,6 +144,9 @@
 					document.getElementById('basic-waypoint').classList.remove('my-test-out');
 					$('.my-image').addClass('my-image__animation--2');
 					$('.my-image').removeClass('my-image__animation--1');
+					$('.figure-highlight--2').addClass('is-visible');
+					$('.figure-highlight--1').addClass('is-hidden');
+					$('.figure-highlight--1').removeClass('is-visible');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--1');
 				}
@@ -141,6 +155,8 @@
 					document.getElementById('basic-waypoint').classList.remove('my-test-in');
 					$('.my-image').addClass('my-image__animation--1');
 					$('.my-image').removeClass('my-image__animation--2');
+					$('.figure-highlight--1').addClass('is-hidden');
+					$('.figure-highlight--2').removeClass('is-visible');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
 				}
@@ -149,6 +165,8 @@
 					document.getElementById('basic-waypoint-2').classList.remove('my-test-out');
 					$('.my-image').addClass('my-image__animation--3');
 					$('.my-image').removeClass('my-image__animation--2');
+					$('.figure-highlight--3').addClass('is-visible');
+					$('.figure-highlight--3').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
 				}
@@ -157,6 +175,8 @@
 					document.getElementById('basic-waypoint-2').classList.remove('my-test-in');
 					$('.my-image').addClass('my-image__animation--2');
 					$('.my-image').removeClass('my-image__animation--3');
+					$('.figure-highlight--3').addClass('is-hidden');
+					$('.figure-highlight--3').removeClass('is-visible');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
 				}
@@ -165,6 +185,8 @@
 					document.getElementById('basic-waypoint-3').classList.remove('my-test-out');
 					$('.my-image').addClass('my-image__animation--4');
 					$('.my-image').removeClass('my-image__animation--3');
+					$('.figure-highlight--4').addClass('is-visible');
+					$('.figure-highlight--4').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--4');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
 				}
@@ -173,6 +195,8 @@
 					document.getElementById('basic-waypoint-3').classList.remove('my-test-in');
 					$('.my-image').addClass('my-image__animation--3');
 					$('.my-image').removeClass('my-image__animation--4');
+					$('.figure-highlight--4').addClass('is-hidden');
+					$('.figure-highlight--4').removeClass('is-visible');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--4');
 				}

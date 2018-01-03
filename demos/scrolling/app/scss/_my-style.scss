@@ -43,75 +43,6 @@ p {
 		margin-top: 2rem;
 	}
 }
-.minimap__container {
-	border: .25rem solid #666;
-	box-shadow: 0 0 1rem #000;
-	display: none;
-	align-items: center;
-	height: auto;
-	width: 15%;
-	margin: 1.25rem;
-	position: fixed;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-}
-.my-minimap__wrapper {
-	height: auto;
-	width: 105%;
-}
-.my-minimap--hidden {
-	display: none;
-}
-.my-minimap--visible {
-	display: flex;
-}
-.my-minimap {
-	width: 100%;
-}
-.my-minimap__viewing-area {
-	background-color: rgba(100, 0, 0, .5);
-	height: 100%;
-	width: 120%;
-	position: absolute;
-	top: 0;
-	z-index: 10;
-}
-.my-minimap__animation--reset {
-	transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-	transition-property: transform;
-	transition-delay: .2s;
-	transition-duration: 1.5s;
-	transition-timing-function: ease;
-}
-.my-minimap__animation--1 {
-	transform: translate3d(13%, 11%, 0) scale3d(.34, .34, .34);
-	transition-property: transform;
-	transition-delay: .2s;
-	transition-duration: 1s;
-	transition-timing-function: ease;
-}
-.my-minimap__animation--2 {
-	transform: translate3d(3%, 8%, 0) scale3d(.53, .53, .53);
-	transition-property: transform;
-	transition-delay: .2s;
-	transition-duration: 1s;
-	transition-timing-function: ease;
-}
-.my-minimap__animation--3 {
-	transform: translate3d(14%, 13%, 0) scale3d(.47, .47, .47);
-	transition-property: transform;
-	transition-delay: .2s;
-	transition-duration: 1s;
-	transition-timing-function: ease;
-}
-.my-minimap__animation--4 {
-	transform: translate3d(7%, -10%, 0) scale3d(.27, .37, .3);
-	transition-property: transform;
-	transition-delay: .2s;
-	transition-duration: 1s;
-	transition-timing-function: ease;
-}
 #my-offset-debug {
 	 background-color: red;
 	 height: 2px;
@@ -161,14 +92,80 @@ p {
 		text-align: left;
 		padding-top: .5rem;
 	}
-/*	strong {
-		font-weight: 800;
-	}*/
 }
 .basic-sticky-waypoint {
 	height: auto;
 	width: 100%;
 	overflow: hidden;
+}
+.minimap__container {
+	border: .25rem solid #666;
+	box-shadow: 0 0 1rem #000;
+	display: none;
+	align-items: center;
+	height: auto;
+	width: 15%;
+	margin: 1.25rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.my-minimap__wrapper {
+	height: auto;
+	width: 105%;
+}
+.my-minimap--hidden {
+	display: none;
+}
+.my-minimap--visible {
+	display: flex;
+}
+.my-minimap {
+	width: 100%;
+}
+.my-minimap__viewing-area {
+	background-color: rgba(100, 0, 0, .5);
+	height: 100%;
+	width: 120%;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+}
+.my-minimap__animation--reset {
+	transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--1 {
+	transform: translate3d(0%, 14%, 0) scale3d(.36, .36, .36);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--2 {
+	transform: translate3d(3%, 8%, 0) scale3d(.53, .53, .53);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--3 {
+	transform: translate3d(14%, 13%, 0) scale3d(.47, .47, .47);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--4 {
+	transform: translate3d(7%, -10%, 0) scale3d(.27, .37, .3);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
 }
 .my-image {
 	height: auto;
@@ -187,7 +184,7 @@ p {
 }
 .my-image__animation--1 {
 	filter: grayscale(0);
-	transform: translate3d(-65%, -38%, 0) scale3d(2.6, 2.6, 2.6);
+	transform: translate3d(-30%, -41%, 0) scale3d(2.5, 2.5, 2.5);
 	transition-property: filter, transform;
 	transition-delay: .2s;
 	transition-duration: .8s;
@@ -201,7 +198,7 @@ p {
 	transition-timing-function: ease;
 }
 .my-image__animation--3 {
-	transform: translate3d(-48%, -30%, 0) scale3d(2, 2, 2);
+	transform: translate3d(-48%, -33%, 0) scale3d(2, 2, 2);
 	transition-property: transform;
 	transition-delay: .2s;
 	transition-duration: .8s;
@@ -233,3 +230,49 @@ p {
 	transition-duration: .3s;
 	transition-timing-function: ease;
 }
+.figure-highlight {
+	border: .5rem solid orange;
+	height: 95vh;
+	width: 25rem;
+	position: absolute;
+	z-index: 20;
+}
+.figure-highlight--1 {
+	display: none;
+	top: 2%;
+	left: 64%;
+}
+.figure-highlight--2 {
+	display: none;
+	top: 2%;
+	left: 69%;
+}
+.figure-highlight--3 {
+	display: none;
+	top: 1%;
+	left: 71.3%;
+}
+.figure-highlight--4 {
+	display: none;
+	height: 73vh;
+	top: 0%;
+	left: 60.5%;
+}
+.is-hidden {
+	display: none;
+}
+.is-visible {
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+

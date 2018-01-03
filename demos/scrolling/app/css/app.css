@@ -36,6 +36,59 @@ p {
   text-align: left;
   margin-top: 2rem; }
 
+#my-offset-debug {
+  background-color: red;
+  height: 2px;
+  width: 100vw;
+  position: fixed;
+  top: 150px;
+  z-index: 1000; }
+
+.stuck {
+  position: fixed;
+  top: 0; }
+
+.graphic__prose {
+  width: 25%; }
+
+.basic-waypoint-bkg {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 100px;
+  /*	width: 100%;*/
+  padding: 2rem;
+  position: relative; }
+
+#basic-waypoint {
+  top: 50vh;
+  left: 18%; }
+
+#basic-waypoint-2 {
+  top: 150vh;
+  left: 18%; }
+
+#basic-waypoint-3 {
+  top: 250vh;
+  left: 18%; }
+
+#basic-waypoint-4 {
+  top: 380vh;
+  left: 18%; }
+  #basic-waypoint-4 img {
+    max-width: 100%; }
+  #basic-waypoint-4 p.caption {
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: left;
+    padding-top: .5rem; }
+
+.basic-sticky-waypoint {
+  height: auto;
+  width: 100%;
+  overflow: hidden; }
+
 .minimap__container {
   border: .25rem solid #666;
   -webkit-box-shadow: 0 0 1rem #000;
@@ -96,8 +149,8 @@ p {
   transition-timing-function: ease; }
 
 .my-minimap__animation--1 {
-  -webkit-transform: translate3d(13%, 11%, 0) scale3d(0.34, 0.34, 0.34);
-  transform: translate3d(13%, 11%, 0) scale3d(0.34, 0.34, 0.34);
+  -webkit-transform: translate3d(0%, 14%, 0) scale3d(0.36, 0.36, 0.36);
+  transform: translate3d(0%, 14%, 0) scale3d(0.36, 0.36, 0.36);
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   -o-transition-property: transform;
@@ -167,62 +220,6 @@ p {
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
 
-#my-offset-debug {
-  background-color: red;
-  height: 2px;
-  width: 100vw;
-  position: fixed;
-  top: 150px;
-  z-index: 1000; }
-
-.stuck {
-  position: fixed;
-  top: 0; }
-
-.graphic__prose {
-  width: 25%; }
-
-.basic-waypoint-bkg {
-  background-color: rgba(255, 255, 255, 0.7);
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  min-height: 100px;
-  /*	width: 100%;*/
-  padding: 2rem;
-  position: relative; }
-
-#basic-waypoint {
-  top: 50vh;
-  left: 18%; }
-
-#basic-waypoint-2 {
-  top: 150vh;
-  left: 18%; }
-
-#basic-waypoint-3 {
-  top: 250vh;
-  left: 18%; }
-
-#basic-waypoint-4 {
-  top: 380vh;
-  left: 18%;
-  /*	strong {
-		font-weight: 800;
-	}*/ }
-  #basic-waypoint-4 img {
-    max-width: 100%; }
-  #basic-waypoint-4 p.caption {
-    font-size: .75rem;
-    line-height: 1rem;
-    text-align: left;
-    padding-top: .5rem; }
-
-.basic-sticky-waypoint {
-  height: auto;
-  width: 100%;
-  overflow: hidden; }
-
 .my-image {
   height: auto;
   width: 100%; }
@@ -254,8 +251,8 @@ p {
 .my-image__animation--1 {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
-  -webkit-transform: translate3d(-65%, -38%, 0) scale3d(2.6, 2.6, 2.6);
-  transform: translate3d(-65%, -38%, 0) scale3d(2.6, 2.6, 2.6);
+  -webkit-transform: translate3d(-30%, -41%, 0) scale3d(2.5, 2.5, 2.5);
+  transform: translate3d(-30%, -41%, 0) scale3d(2.5, 2.5, 2.5);
   -webkit-transition-property: -webkit-filter, -webkit-transform;
   transition-property: -webkit-filter, -webkit-transform;
   -o-transition-property: filter, transform;
@@ -290,8 +287,8 @@ p {
   transition-timing-function: ease; }
 
 .my-image__animation--3 {
-  -webkit-transform: translate3d(-48%, -30%, 0) scale3d(2, 2, 2);
-  transform: translate3d(-48%, -30%, 0) scale3d(2, 2, 2);
+  -webkit-transform: translate3d(-48%, -33%, 0) scale3d(2, 2, 2);
+  transform: translate3d(-48%, -33%, 0) scale3d(2, 2, 2);
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   -o-transition-property: transform;
@@ -366,6 +363,40 @@ p {
   -webkit-transition-timing-function: ease;
   -o-transition-timing-function: ease;
   transition-timing-function: ease; }
+
+.figure-highlight {
+  border: .5rem solid orange;
+  height: 95vh;
+  width: 25rem;
+  position: absolute;
+  z-index: 20; }
+
+.figure-highlight--1 {
+  display: none;
+  top: 2%;
+  left: 64%; }
+
+.figure-highlight--2 {
+  display: none;
+  top: 2%;
+  left: 69%; }
+
+.figure-highlight--3 {
+  display: none;
+  top: 1%;
+  left: 71.3%; }
+
+.figure-highlight--4 {
+  display: none;
+  height: 73vh;
+  top: 0%;
+  left: 60.5%; }
+
+.is-hidden {
+  display: none; }
+
+.is-visible {
+  display: inline-block; }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
   /* phones in landscape */ }
