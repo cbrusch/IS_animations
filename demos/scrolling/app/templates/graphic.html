@@ -1,0 +1,209 @@
+<div class="graphic__wrapper">
+	<div class="basic-sticky-waypoint">
+		<img class="my-image my-image--filtered" src="img/tiepolo1765.jpg" alt="">
+		<div class="figure-highlight figure-highlight--1"></div>
+		<div class="figure-highlight figure-highlight--2"></div>
+		<div class="figure-highlight figure-highlight--3"></div>
+		<div class="figure-highlight figure-highlight--4"></div>
+	</div>
+	<div class="minimap__wrapper">
+	<div class="minimap__container">
+		<img class="my-minimap" src="img/tiepolo1765.jpg" alt="">
+		<div class="my-minimap__viewing-area"></div>
+	</div>
+	</div>
+
+	<div id="basic-waypoint" class="graphic__prose basic-waypoint-bkg"><h4>Here we see a young boy – or, perhaps, a dwarf – wearing a funny feathered hat. A large key hangs from his belt – does it unlock the meaning of the painting? In his hand he holds a magnifying glass.</h4></div>
+	<div id="basic-waypoint-2" class="graphic__prose basic-waypoint-bkg"><h4>So, too, does the man next to him; wearing a bright red robe and bautta, or tricorn hat and mask, this monumental figure peers intently through his looking glass. Is the visual emphasis on magnification that characterizes this pair an invitation for us to join their company, to look more closely?</h4></div>
+	<div id="basic-waypoint-3" class="graphic__prose basic-waypoint-bkg"><h4>Now we see a masked boy holding a lantern. He seems to be tugging at the man’s red robe. Does the lantern-carrying boy serve to illuminate the identity of this masked ensemble? Or does he shed light on the scene unfolding before them?</h4></div>
+	<div id="basic-waypoint-4" class="graphic__prose basic-waypoint-bkg">
+		<h5>Giandomenico painted other colorful sketches of Venetian life during Carnival. The Minuet, painted just three years earlier, includes a mondo nuovo, visible in the far left corner. A barker, seemingly lurking in the shadows, surveys the festive crowd. This is the first time the device appears in Giandomenico&#39;s work, albeit as a somewhat marginal reference in a Carnival scene.</h5>
+		<div><a href="https://commons.wikimedia.org/wiki/Category:Carnival_Scene_-_Giovanni_Domenico_Tiepolo_-_Louvre_RF_1938-100" target="_blank"><img src="img/tiepoloTheMinuet1754.jpg" alt=""><p class="caption"><strong>Giandomenico Tiepolo</strong>, Louvre Museum, Venice, <em>Carnival Scene (The Minuet)</em>, 1754</p></a></div>
+	</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/waypoints/lib/noframework.waypoints.min.js"></script>
+<script src="/js/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="/js/waypoints/lib/shortcuts/sticky.min.js"></script>
+<script src="/js/waypoints/lib/waypoints.debug.js"></script> <!-- remove in production -->
+
+<script>
+	$(function() {
+		// instantiate the global Waypoint class and pass an options object to it. the two paramaters required are element and handler
+		var waypoint = new Waypoint({
+			element: document.getElementById('basic-waypoint'), // tells waypoint which DOM element's position to observe on scroll
+			handler: function(direction) { // triggered when the top of the element hits the top of the viewport
+				console.log('Direction: ' + direction);
+				if(direction === 'down') { // if scrolling down the page, animate to the next part of the image
+					playAnimation2();
+					console.log("animation 2");
+				}
+				else { // if scrolling back up the page, animate to the previous part of the image and fade the current text out
+					reverseAnimation2();
+				}
+				
+			},
+			offset: -190, // moving the trigger location from 0 at the top of the viewport
+		})
+		var waypoint = new Waypoint({
+			element: document.getElementById('basic-waypoint-2'),
+			handler: function(direction) {
+				console.log('Direction: ' + direction);
+				if(direction === 'down') {
+					playAnimation3();
+					console.log("animation 3");
+
+				}
+				else {
+					reverseAnimation3();
+				}
+			},
+			offset: -290,
+		})
+		var waypoint = new Waypoint({
+			element: document.getElementById('basic-waypoint-3'),
+			handler: function(direction) {
+				console.log('Direction: ' + direction);
+				if(direction === 'down') {
+					playAnimation4();
+				}
+				else {
+					reverseAnimation4();
+				}
+			},
+			offset: -270,
+		})
+		var waypoint = new Waypoint({
+			element: document.getElementById('basic-waypoint-4'),
+			handler: function(direction) {
+				console.log('Direction: ' + direction);
+				if(direction === 'down') {
+					playAnimation5();
+				}
+				else {
+					reverseAnimation5();
+				}
+			},
+			offset: -230,
+		})
+		var sticky = new Waypoint.Sticky({
+			element: $('.basic-sticky-waypoint')[0],
+			handler: function(direction) { // triggered when the top of the element hits the top of the viewport
+				if(direction === 'down') {
+					playAnimation1();
+					console.log("graphic starts with animation 1");
+				}
+				else {
+					reverseAnimation1();
+				}
+				// if($('#basic-waypoint-3').hasClass('my-test-in')) {
+				// 	sticky.destroy();
+				// }
+			}
+		})
+		
+		function playAnimation1() {
+			$('.my-image').addClass('my-image__animation--1');
+			$('.my-image').removeClass('my-image--filtered');
+			$('.my-image').removeClass('my-image--reset');
+			window.setTimeout(function(){
+				$('.figure-highlight--1').addClass('is-visible');
+			}, 800);
+			$('.figure-highlight--1').removeClass('is-hidden');
+			$('.minimap__container').addClass('my-minimap--visible');
+			$('.minimap__container').removeClass('my-minimap--hidden');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--reset');
+
+		}
+		function reverseAnimation1() {
+			$('.my-image').addClass('my-image--reset');
+			$('.my-image').removeClass('my-image__animation--1');
+			$('.figure-highlight--1').addClass('is-hidden');
+			$('.figure-highlight--1').removeClass('is-visible');
+			$('.minimap__container').addClass('my-minimap--hidden');
+			$('.minimap__container').removeClass('my-minimap--visible');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--1');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--reset');	
+		}
+		function playAnimation2() {
+			document.getElementById('basic-waypoint').classList.add('my-test-in');
+			document.getElementById('basic-waypoint').classList.remove('my-test-out');
+			$('.my-image').addClass('my-image__animation--2');
+			$('.my-image').removeClass('my-image__animation--1');
+			$('.figure-highlight--2').addClass('is-visible');
+			$('.figure-highlight--1').addClass('is-hidden');
+			$('.figure-highlight--1').removeClass('is-visible');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--1');
+		}
+		function reverseAnimation2() {
+			document.getElementById('basic-waypoint').classList.add('my-test-out');
+			document.getElementById('basic-waypoint').classList.remove('my-test-in');
+			$('.my-image').addClass('my-image__animation--1');
+			$('.my-image').removeClass('my-image__animation--2');
+			$('.figure-highlight--1').addClass('is-hidden');
+			$('.figure-highlight--2').removeClass('is-visible');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
+		}
+		function playAnimation3() {
+			document.getElementById('basic-waypoint-2').classList.add('my-test-in');
+			document.getElementById('basic-waypoint-2').classList.remove('my-test-out');
+			$('.my-image').addClass('my-image__animation--3');
+			$('.my-image').removeClass('my-image__animation--2');
+			$('.figure-highlight--3').addClass('is-visible');
+			$('.figure-highlight--3').removeClass('is-hidden');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
+		}
+		function reverseAnimation3() {
+			document.getElementById('basic-waypoint-2').classList.add('my-test-out');
+			document.getElementById('basic-waypoint-2').classList.remove('my-test-in');
+			$('.my-image').addClass('my-image__animation--2');
+			$('.my-image').removeClass('my-image__animation--3');
+			$('.figure-highlight--3').addClass('is-hidden');
+			$('.figure-highlight--3').removeClass('is-visible');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
+		}
+		function playAnimation4() {
+			document.getElementById('basic-waypoint-3').classList.add('my-test-in');
+			document.getElementById('basic-waypoint-3').classList.remove('my-test-out');
+			$('.my-image').addClass('my-image__animation--4');
+			$('.my-image').removeClass('my-image__animation--3');
+			$('.figure-highlight--4').addClass('is-visible');
+			$('.figure-highlight--4').removeClass('is-hidden');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--4');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
+		}
+		function reverseAnimation4() {
+			document.getElementById('basic-waypoint-3').classList.add('my-test-out');
+			document.getElementById('basic-waypoint-3').classList.remove('my-test-in');
+			$('.my-image').addClass('my-image__animation--3');
+			$('.my-image').removeClass('my-image__animation--4');
+			$('.figure-highlight--4').addClass('is-hidden');
+			$('.figure-highlight--4').removeClass('is-visible');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--4');
+		}
+		function playAnimation5() {
+			document.getElementById('basic-waypoint-4').classList.add('my-test-in');
+			document.getElementById('basic-waypoint-4').classList.remove('my-test-out');
+			$('.my-image').addClass('my-image__animation--end');
+			$('.my-image').removeClass('my-image__animation--4');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--reset');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--4');
+		}
+		function reverseAnimation5() {
+			document.getElementById('basic-waypoint-4').classList.add('my-test-out');
+			document.getElementById('basic-waypoint-4').classList.remove('my-test-in');
+			$('.my-image').addClass('my-image__animation--4');
+			$('.my-image').removeClass('my-image__animation--end');
+			$('.my-minimap__viewing-area').addClass('my-minimap__animation--4');
+			$('.my-minimap__viewing-area').removeClass('my-minimap__animation--reset');
+		}
+	});
+</script>
