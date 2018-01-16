@@ -123,7 +123,7 @@
 						$('.figure-highlight--1').addClass('is-visible');
 					}, 800);
 					$('.figure-highlight--1').removeClass('is-hidden');
-					$('.minimap__container').addClass('my-minimap--visible');
+					$('.minimap__container').addClass('my-minimap--visible fadeIn');
 					$('.minimap__container').removeClass('my-minimap--hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--reset');
@@ -145,8 +145,8 @@
 					$('.my-image').addClass('my-image__animation--2');
 					$('.my-image').removeClass('my-image__animation--1');
 					$('.figure-highlight--2').addClass('is-visible');
-					$('.figure-highlight--1').addClass('is-hidden');
 					$('.figure-highlight--1').removeClass('is-visible');
+					$('.figure-highlight--1').addClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--1');
 				}
@@ -155,8 +155,10 @@
 					document.getElementById('basic-waypoint').classList.remove('my-test-in');
 					$('.my-image').addClass('my-image__animation--1');
 					$('.my-image').removeClass('my-image__animation--2');
-					$('.figure-highlight--1').addClass('is-hidden');
+					$('.figure-highlight--2').addClass('is-hidden');
 					$('.figure-highlight--2').removeClass('is-visible');
+					$('.figure-highlight--1').addClass('is-visible');
+					$('.figure-highlight--1').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--1');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
 				}
@@ -167,6 +169,8 @@
 					$('.my-image').removeClass('my-image__animation--2');
 					$('.figure-highlight--3').addClass('is-visible');
 					$('.figure-highlight--3').removeClass('is-hidden');
+					$('.figure-highlight--2').removeClass('is-visible');
+					$('.figure-highlight--2').addClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--2');
 				}
@@ -177,6 +181,8 @@
 					$('.my-image').removeClass('my-image__animation--3');
 					$('.figure-highlight--3').addClass('is-hidden');
 					$('.figure-highlight--3').removeClass('is-visible');
+					$('.figure-highlight--2').addClass('is-visible');
+					$('.figure-highlight--2').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--2');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
 				}
@@ -187,6 +193,8 @@
 					$('.my-image').removeClass('my-image__animation--3');
 					$('.figure-highlight--4').addClass('is-visible');
 					$('.figure-highlight--4').removeClass('is-hidden');
+					$('.figure-highlight--3').removeClass('is-visible');
+					$('.figure-highlight--3').addClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--4');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--3');
 				}
@@ -197,6 +205,8 @@
 					$('.my-image').removeClass('my-image__animation--4');
 					$('.figure-highlight--4').addClass('is-hidden');
 					$('.figure-highlight--4').removeClass('is-visible');
+					$('.figure-highlight--3').addClass('is-visible');
+					$('.figure-highlight--3').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--3');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--4');
 				}
@@ -205,6 +215,8 @@
 					document.getElementById('basic-waypoint-4').classList.remove('my-test-out');
 					$('.my-image').addClass('my-image__animation--end');
 					$('.my-image').removeClass('my-image__animation--4');
+					$('.figure-highlight--4').removeClass('is-visible');
+					$('.figure-highlight--4').addClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--reset');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--4');
 				}
@@ -213,6 +225,8 @@
 					document.getElementById('basic-waypoint-4').classList.remove('my-test-in');
 					$('.my-image').addClass('my-image__animation--4');
 					$('.my-image').removeClass('my-image__animation--end');
+					$('.figure-highlight--4').addClass('is-visible');
+					$('.figure-highlight--4').removeClass('is-hidden');
 					$('.my-minimap__viewing-area').addClass('my-minimap__animation--4');
 					$('.my-minimap__viewing-area').removeClass('my-minimap__animation--reset');
 				}

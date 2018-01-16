@@ -233,7 +233,7 @@ p {
 .figure-highlight {
 	border: .5rem solid orange;
 	height: 95vh;
-	width: 25rem;
+	max-width: 20%;
 	position: absolute;
 	z-index: 20;
 }
