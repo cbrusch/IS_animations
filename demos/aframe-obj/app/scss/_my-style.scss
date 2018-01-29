@@ -1,0 +1,278 @@
+html {
+	font-family: Georgia;
+	font-weight: 300;
+	font-size: 16px;
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+}
+body {
+	background-color: hsla(360, 100, 100, 1);
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+p {
+	margin: 0;
+}
+.article {
+	font-size: 72px;
+	font-weight: 600;
+	text-align: center;
+	height: 800px;
+	width: 100%;
+	position: relative;
+	top: 100px; 	
+}
+.graphic__wrapper {
+
+	.sticky-wrapper {
+
+	}
+	h4 {
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		text-align: left;
+		margin-top: 2rem;
+	}
+	h5 {
+		font-size: 1rem;
+		line-height: 2rem;
+		text-align: left;
+		margin-top: 2rem;
+	}
+}
+#my-offset-debug {
+	 background-color: red;
+	 height: 2px;
+	 width: 100vw;
+	 position: fixed;
+	 top: 150px;
+	 z-index: 1000;
+}
+.stuck {
+	position: fixed;
+	top: 0;
+}
+.graphic__prose {
+	width: 25%;
+}
+.basic-waypoint-bkg {
+	background-color: hsla(360, 100, 100, .7);
+	font-size: 36px;
+	font-weight: 600;
+	text-align: center;
+	min-height: 100px;
+/*	width: 100%;*/
+	padding: 2rem;
+	position: relative;
+}
+#basic-waypoint {
+	top: 50vh;
+	left: 18%;
+}
+#basic-waypoint-2 {
+	top: 150vh;
+	left: 18%;
+}
+#basic-waypoint-3 {
+	top: 250vh;
+	left: 18%;
+}
+#basic-waypoint-4 {
+	top: 380vh;
+	left: 18%;
+	img {
+		max-width: 100%;
+	}
+	p.caption {
+		font-size: .75rem;
+		line-height: 1rem;
+		text-align: left;
+		padding-top: .5rem;
+	}
+}
+.basic-sticky-waypoint {
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
+.minimap__container {
+	border: .25rem solid #666;
+	box-shadow: 0 0 1rem #000;
+	display: none;
+	align-items: center;
+	height: auto;
+	width: 15%;
+	margin: 1.25rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.my-minimap__wrapper {
+	height: auto;
+	width: 105%;
+}
+.my-minimap--hidden {
+	display: none;
+}
+.my-minimap--visible {
+	display: flex;
+}
+.my-minimap {
+	width: 100%;
+}
+.my-minimap__viewing-area {
+	background-color: rgba(100, 0, 0, .5);
+	height: 100%;
+	width: 120%;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+}
+.my-minimap__animation--reset {
+	transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--1 {
+	transform: translate3d(0%, 14%, 0) scale3d(.36, .36, .36);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--2 {
+	transform: translate3d(3%, 8%, 0) scale3d(.53, .53, .53);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--3 {
+	transform: translate3d(14%, 13%, 0) scale3d(.47, .47, .47);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-minimap__animation--4 {
+	transform: translate3d(7%, -10%, 0) scale3d(.27, .37, .3);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-image {
+	height: auto;
+	width: 100%;
+}
+.my-image--filtered {
+	filter: grayscale(85%);
+}
+.my-image__animation--reset {
+	filter: grayscale(85%);
+	transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+	transition-property: filter, transform;
+	transition-delay: .5s;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;	
+}
+.my-image__animation--1 {
+	filter: grayscale(0);
+	transform: translate3d(-30%, -41%, 0) scale3d(2.5, 2.5, 2.5);
+	transition-property: filter, transform;
+	transition-delay: .2s;
+	transition-duration: .8s;
+	transition-timing-function: ease;
+}
+.my-image__animation--2 {
+	transform: translate3d(-22%, -20%, 0) scale3d(1.6, 1.6, 1.6);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: .8s;
+	transition-timing-function: ease;
+}
+.my-image__animation--3 {
+	transform: translate3d(-48%, -33%, 0) scale3d(2, 2, 2);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: .8s;
+	transition-timing-function: ease;
+}
+.my-image__animation--4 {
+	transform: translate3d(-56%, 20%, 0) scale3d(3, 3, 3);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: .8s;
+	transition-timing-function: ease;
+}
+.my-image__animation--end {
+	transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+	transition-property: transform;
+	transition-delay: .2s;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;
+}
+.my-test-in {
+	background-color: hsla(360, 100, 0, .5);
+	transition-property: background-color;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.my-test-out {
+	background-color: hsla(360, 100, 100, .7);
+	transition-property: background-color;
+	transition-duration: .3s;
+	transition-timing-function: ease;
+}
+.figure-highlight {
+	border: .5rem solid orange;
+	height: 95vh;
+	width: 25rem;
+	position: absolute;
+	z-index: 20;
+}
+.figure-highlight--1 {
+	display: none;
+	top: 2%;
+	left: 64%;
+}
+.figure-highlight--2 {
+	display: none;
+	top: 2%;
+	left: 69%;
+}
+.figure-highlight--3 {
+	display: none;
+	top: 1%;
+	left: 71.3%;
+}
+.figure-highlight--4 {
+	display: none;
+	height: 73vh;
+	top: 0%;
+	left: 60.5%;
+}
+.is-hidden {
+	display: none;
+}
+.is-visible {
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
