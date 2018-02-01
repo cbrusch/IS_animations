@@ -95,7 +95,6 @@ p {
   box-shadow: 0 0 1rem #000;
   display: none;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   height: auto;
@@ -115,7 +114,6 @@ p {
 
 .my-minimap--visible {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
