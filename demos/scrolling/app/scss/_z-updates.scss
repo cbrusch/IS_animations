@@ -7,21 +7,31 @@ p {
 	text-align: left;
 	padding: 5% 20% 0 20%;
 }
+.figure-highlight {
+	border: 8px solid hsla(38, 100%, 50%, .8);
+	height: 96vh;
+	max-width: 50%;
+}
 .figure-highlight--1 {
+	top: 1%;
 	left: 67%;
+	width: 20vw;
 }
 .figure-highlight--2 {
-	max-width: 50%;
+	top: 1%;
+	left: 68.5%;
+	width: 29vw;
 }
 .figure-highlight--3 {
 	height: 98vh;
-	max-width: 50%;
-	width: 25.7rem;
+	width: 28vw;
 	top: 0;
-	left: 70%;
+	left: 71%;
 }
 .figure-highlight--4 {
 	max-width: 50%;
-	width: 26rem;
+	height: 50vh;
+	width: 28vw;
+	top: 20%;
 	left: 60%;
 }
