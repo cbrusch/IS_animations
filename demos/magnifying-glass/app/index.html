@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Tiepolo Portals</title>
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body>
+	<!-- a modification of https://codepen.io/AGvin/pen/mqKsC -->
+		<div class="wrapper">
+			<div class="mn-1757"></div>
+			<img class="mn-1791" src="img/mn1791WithText.png" width="80%" />
+		</div>
+		<div class="thumbnails">
+			<div class="thumbnail"><img class="thumbnail__1757 is-active" src="img/1757.jpg" /><p>1757</p></div>
+			<div class="thumbnail"><img class="thumbnail__1765a" src="img/mn1765A.jpg" /><p>1765</p></div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var native_width = 0;
+				var native_height = 0;
+				var thumbnail1757 = $('.thumbnail__1757');
+				var thumbnail1765a = $('.thumbnail__1765a');
+				var fullsize1757 = $('.full-size__1757');
+				var fullsize1765a = $('.full-size__1765a');
+
+				show1757();
+
+				$(thumbnail1757).click(function() {
+					show1757();
+				});
+
+				$(thumbnail1765a).click(function() {
+					show1765a();
+				});
+
+				function show1757() {
+					$(thumbnail1765a).removeClass('is-active');
+					$(thumbnail1757).addClass('is-active');
+					$('.mn-1757').css("background", "url(img/mn1757Layer_black.png) no-repeat");
+					$('.mn-1757').css("background-size", "100vw, 100%");
+
+					$('.wrapper').mousemove(function(e) { // map magnifying glass to main image dimensions once
+						if(!native_width && !native_height) { // calculate the width and height of the main image (1791) on load
+							var image_object = new Image(); // construct a new Image element
+							image_object.src = $('.mn-1791').attr("src"); //give it the same img source as the mn-1791 element
+							native_width = image_object.width*1; // give it the same width and height as the source image
+							native_height = image_object.height*1;
+								console.log(image_object.width);
+						}
+						else { // map magnifying glass to mouse position continuously
+							var magnify_offset = $(this).offset(); // current position coordinates of wrapper (seems to always be 0 0)
+							// console.log(e.pageX);
+							var mouseX = e.pageX - magnify_offset.left; // mouse x-coord - wrapper x-coord (x-0)
+							var mouseY = e.pageY - magnify_offset.top; // mouse y-coord - wrapper y-cord (y-0)
+
+							// make magnifying glass disappear when it reaches the edges of the .wrapper div
+							if(mouseX < $(this).width() && mouseY < $(this).height() && mouseX > 0 && mouseY > 0) { // show portal if mouseX & mouseY is inside .wrapper
+								$('.mn-1757').fadeIn(100);
+							}
+							else { // hide portal if mouseX and/or mouseY is outside .wrapper
+								$('.mn-1757').fadeOut(100); 
+							}
+
+							if($('.mn-1757').is(":visible")) {
+								var bkgPosX = -mouseX + ($('.mn-1791').width() * .08); // move 1757 painting about 10% to the right to line up with key figures in 1791
+								var bkgPosY = 0;
+								var bkgPos = bkgPosX + "px " + bkgPosY + "px";
+								var portalPosX = mouseX - $('.mn-1757').width()/2;
+								var portalPosY = 0;
+								$('.mn-1757').css({left: portalPosX, top: portalPosY, backgroundPosition: bkgPos});
+
+							}
+						}
+					})
+				}
+
+				function show1765a() {
+					$(thumbnail1757).removeClass('is-active');
+					$(thumbnail1765a).addClass('is-active');
+					$('.mn-1757').css("background", "url(img/mn1765LayerA_black.png) no-repeat");
+					$('.mn-1757').css("background-size", "100vw, 100%");
+
+					$('.wrapper').mousemove(function(e) {
+						if(!native_width && !native_height) {
+							var image_object = new Image();
+							image_object.src = $(".mn-1791").attr("src");
+
+							native_width = image_object.width*.5;
+							native_height = image_object.height*.5;
+						}
+						else {
+							var magnify_offset = $(this).offset();
+							var mouseX = e.pageX - magnify_offset.left;
+							var mouseY = e.pageY - magnify_offset.top;
+
+							if(mouseX < $(this).width() && mouseY < $(this).height() && mouseX > 0 && mouseY > 0) {
+								$('.mn-1757').fadeIn(100);
+							}
+							else {
+								$('.mn-1757').fadeOut(100);
+							}
+
+							if($('.mn-1757').is(":visible")) {
+								var bkgPosX = -mouseX + ($('.mn-1791').width() * .1); // move 1765 painting about 10% to the right to line up with key figures in 1791
+								var bkgPosY = 0;
+								var bkgPos = bkgPosX + "px " + bkgPosY + "px";
+								var portalPosX = mouseX - $('.mn-1757').width()/2;
+								var portalPosY = 0;
+								$('.mn-1757').css({left: portalPosX, top: portalPosY, backgroundPosition: bkgPos});
+							}
+						}
+					})
+				}	
+			});
+		</script>
+	</body>
+</html>
