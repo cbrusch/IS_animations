@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd rooftex.jpg
+map_Kd https://cdn.glitch.com/1ba6ce1b-3058-4450-a69a-0108115b3bce%2Frooftex.jpg?1524587808158
 
 #portal frames
 newmtl Material.008
@@ -22,7 +22,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd Screen Shot 2017-08-18 at 12.00.00 PM.png
+map_Kd https://cdn.glitch.com/1ba6ce1b-3058-4450-a69a-0108115b3bce%2FScreen%20Shot%202017-08-18%20at%2012.00.00%20PM.png?1524587808566
 
 newmtl None
 Ns 0
@@ -40,7 +40,7 @@ Kd 0.8 0.8 0.8
 Ks 0.8 0.8 0.8
 d 1
 illum 2
-map_Kd texture6.png
+map_Kd https://cdn.glitch.com/1ba6ce1b-3058-4450-a69a-0108115b3bce%2Ftexture6.png?1524587808606
 
 #cupola
 newmtl None_rooftex.jpg
@@ -50,7 +50,7 @@ Kd 0.8 0.8 0.8
 Ks 0.8 0.8 0.8
 d 1
 illum 2
-map_Kd rooftex.jpg
+map_Kd https://cdn.glitch.com/1ba6ce1b-3058-4450-a69a-0108115b3bce%2Frooftex.jpg?1524587808158
 
 #roof
 newmtl None_rooftex.jpg.001
@@ -60,4 +60,4 @@ Kd 0.8 0.8 0.8
 Ks 0.8 0.8 0.8
 d 1
 illum 2
-map_Kd rooftex.jpg
+map_Kd https://cdn.glitch.com/1ba6ce1b-3058-4450-a69a-0108115b3bce%2Frooftex.jpg?1524587808158

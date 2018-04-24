@@ -10,9 +10,8 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd rooftex.jpg
+map_Kd Users/Zak/Pictures/rooftex.jpg
 
-#portal frames
 newmtl Material.008
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
@@ -22,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd Screen Shot 2017-08-18 at 12.00.00 PM.png
+map_Kd Users/Zak/Desktop/Screen Shot 2017-08-18 at 12.00.00 PM.png
 
 newmtl None
 Ns 0
@@ -32,7 +31,6 @@ Ks 0.8 0.8 0.8
 d 1
 illum 2
 
-#cupola columns
 newmtl None_Screen_Shot_2017-08-18_at_11.37.45_AM.png
 Ns 0
 Ka 0.000000 0.000000 0.000000
@@ -40,9 +38,8 @@ Kd 0.8 0.8 0.8
 Ks 0.8 0.8 0.8
 d 1
 illum 2
-map_Kd texture6.png
+map_Kd Users/Zak/Pictures/Muondo documentation/texture6.png
 
-#cupola
 newmtl None_rooftex.jpg
 Ns 0
 Ka 0.000000 0.000000 0.000000
@@ -50,9 +47,8 @@ Kd 0.8 0.8 0.8
 Ks 0.8 0.8 0.8
 d 1
 illum 2
-map_Kd rooftex.jpg
+map_Kd Users/Zak/Pictures/rooftex.jpg
 
-#roof
 newmtl None_rooftex.jpg.001
 Ns 0
 Ka 0.000000 0.000000 0.000000
