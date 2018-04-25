@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Testing the mondo nuovo model in A-Frame</title>
+	    <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/app.css">
-		<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script> <!-- only v0.6 and up supports mtl properly -->
-<!-- 		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> -->
+		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> <!-- only v0.6 and up supports mtl properly, but my mtl doesn't display well in < v0.8 -->
 	</head>
 	<body>
 		<a-scene>
-			<a-entity 	obj-model="obj: url(../assets/objects/mn/nuovomuondonuovo.obj); mtl: url(../assets/objects/mn/nuovomuondonuovo.mtl)" 
-						position="0 0 -6"
-						light="type: ambient; color: #445451; intensity: 2">				
+			<a-assets>
+				<a-asset-item id="mnGLTF"" src="assets/objects/mn/nuovomuondonuovo.gltf"></a-asset-item>
+			</a-assets>
+			<a-entity gltf-model="#mnGLTF"
+            	scale=".6 1 1"
+				position="0 1 -5.7"
+				rotation="0 90 10"
+				light="type: ambient; color: #FACAAF; intensity: 2">				
 			</a-entity>
+<!-- 			<a-entity 	obj-model="obj: url(../assets/objects/mn/nuovomuondonuovo.obj); mtl: url(../assets/objects/mn/nuovomuondonuovo.mtl)" 
+						position="0 1 -5"
+						rotation="0 90 10"
+						light="type: ambient; color: #FACAAF; intensity: 2">				
+			</a-entity> -->
+			<!-- <a-sky color="#F98D24"></a-sky> -->
+			<a-sky src="assets/panoramas/9212498148_2ab9aa8909_o.jpg"></a-sky><!-- CC https://www.flickr.com/photos/markdoliner/9212498148/ -->
 		</a-scene>
 	</body>
 </html>
