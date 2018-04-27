@@ -7,12 +7,25 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/app.css">
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> <!-- only v0.6 and up supports mtl properly, but my mtl doesn't display well in < v0.8 -->
+<!-- 		<script src="js/aframe/dist/aframe-master-js"></script> -->
+		<script src="js/aframe-components/aframe-orbit-controls-component/dist/aframe-orbit-controls-component.min.js"></script>
+<!-- 		  <script src="https://aframe.io/releases/latest/aframe.min.js"></script> -->
+<!--   <script src="https://raw.githubusercontent.com/subsumo/aframe-orbit-controls/master/dist/aframe-orbit-controls-component.min.js"></script> -->
 	</head>
 	<body>
 		<a-scene>
 			<a-assets>
 				<a-asset-item id="mnGLTF"" src="assets/objects/mn/nuovomuondonuovo.gltf"></a-asset-item>
 			</a-assets>
+<!-- 			      <a-entity
+          id="camera"
+          camera="fov: 80; zoom: 1;"
+          position="0 2 5"
+          orbit-controls="autoRotate: false; target: #myModel; enableDamping: true; dampingFactor: 0.125; rotateSpeed:0.25; minDistance:-20; maxDistance:1000;"
+          mouse-cursor=""></a-entity> -->
+          <a-camera orbit-controls target="#myModel" distance="1" look-controls-enabled=false wasd-controls-enabled=false position="0 0 0" ></a-camera>
+<!-- 			<a-entity position="0 1.6 0" camera look-controls></a-entity> -->
+			<a-box id="myModel" height="5" width="5" color="blue" position=" 0 0 -5" rotation="0 45 0"></a-box>
 			<a-entity gltf-model="#mnGLTF"
             	scale=".6 1 1"
 				position="0 1 -5.7"
